@@ -1,0 +1,12 @@
+beautifulsoup4==4.12.3
+plyer==2.1.0
+PyAutoGUI==0.9.54
+pynput==1.7.6
+pyttsx3==2.90
+pywhatkit==5.4
+Requests==2.32.3
+screen_brightness_control==0.23.0
+SpeechRecognition==3.10.3
+volume_control==0.9.2
+wikipedia==1.4.0
+wolframalpha==5.0.0
