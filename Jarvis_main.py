@@ -178,7 +178,7 @@ if __name__ == "__main__":
                     elif "thank you" in query:
                         speak("you are welcome, sir")
                     elif "pause" in query or "pose" in query or "play" in query:
-                        pyautogui.press("k")
+                        pyautogui.press("space")
                     elif "mute" in query:
                         pyautogui.press("m")
                         speak("video muted")
