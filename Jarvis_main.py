@@ -67,6 +67,9 @@ if __name__ == "__main__":
                     if "go to sleep" in query:
                         speak("Ok sir , You can me call anytime")
                         break 
+                    elif "finally sleep" in query:
+                        speak("Going to sleep,sir")
+                        exit()
                     elif "message on whatsapp" in query:
                         from MsgWhatsApp import sendMessageWp
                         sendMessageWp(query)
@@ -101,13 +104,14 @@ if __name__ == "__main__":
                             if(current_brightness > 5):
                                 new_brightness = current_brightness - 5
                             sbc.fade_brightness(new_brightness)
-                        query = query.replace("brightness ","")
-                        query = query.replace("%","")
-                        try:
-                            brightness_value = int(query)
-                        except ValueError:
-                            brightness_value = 50
-                        sbc.set_brightness(brightness_value) 
+                        else:
+                            query = query.replace("brightness ","")
+                            query = query.replace("%","")
+                            try:
+                                brightness_value = int(query)
+                            except ValueError:
+                                brightness_value = 50
+                            sbc.set_brightness(brightness_value) 
                     elif "screenshot" in query:
                         import pyautogui #pip install pyautogui
                         im = pyautogui.screenshot()
@@ -132,9 +136,6 @@ if __name__ == "__main__":
                         data = BeautifulSoup(r.text,"html.parser")
                         temp = data.find("div", class_ = "BNeawe").text
                         speak(f"current{search} is {temp}")
-                    elif "finally sleep" in query:
-                        speak("Going to sleep,sir")
-                        exit()
                     elif "click my photo" in query:
                         pyautogui.press("super")
                         pyautogui.typewrite("camera")
